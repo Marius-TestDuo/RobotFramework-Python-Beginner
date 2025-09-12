@@ -1,0 +1,5 @@
+robotframework
+robotframework-seleniumlibrary
+robotframework-appiumlibrary
+Appium-Python-Client
+robotframework-requests

@@ -1,0 +1,21 @@
+# Python / venv
+.venv/
+__pycache__/
+*.pyc
+
+# Robot Framework outputs
+output.xml
+report.html
+log.html
+report.json
+log.json
+debug.log
+
+# Editors/OS
+.vscode/
+.idea/
+.DS_Store
+
+# Drivers cache
+drivers/
+.wdm/

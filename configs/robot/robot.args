@@ -1,0 +1,20 @@
+--outputdir
+reports
+--loglevel
+INFO
+--consolecolors
+on
+--consolemarkers
+on
+--reporttitle
+Automation Test Report
+--suitestatlevel
+2
+--timestampoutputs
+--xunit
+xunit.xml
+--pythonpath
+libraries
+--exclude
+skip
+--warnonskippedfiles
