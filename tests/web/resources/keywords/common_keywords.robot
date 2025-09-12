@@ -4,6 +4,7 @@
 ...    code duplication in your Robot Framework test automation.
 *** Settings ***
 Library    SeleniumLibrary
+Library    ScreenCapLibrary
 Resource    ../locators/login_page.robot
 Resource    ../locators/common_locators.robot
 Resource    ../../resources/variables/environment.robot
@@ -22,11 +23,8 @@ Create Chrome Options
     Call Method    ${opts}    add_argument    --incognito
     ${disable_features}=    Set Variable    --disable-features=PasswordLeakDetection,PasswordManagerOnboarding,AutofillEnableAccountStorage
     Call Method    ${opts}    add_argument    ${disable_features}
-    [Return]    ${opts}
+    RETURN    ${opts}
 
-# -----------------------------------------------------------
-#         UI Bubble Fallbacks
-# -----------------------------------------------------------
 Dismiss Browser Bubble
     [Documentation]    Dismiss browser UI bubbles (e.g., password manager) using ESC.
     Press Keys    None    ESCAPE
@@ -37,7 +35,7 @@ Dismiss Browser Bubble
 Start Testing
     [Documentation]    Used to start a test. Opens the Environment Browser specified "${BROWSER}" and goes to the SUT specified "${SUT}"
     ...    Used with test Setup
-    [Arguments]    ${test_name}
+    [Arguments]    ${test_name}    ${video}=${False}    ${monitor}=1
     Log    Starting test ${test_name}
     # Use Chrome options to disable password/leak prompts when running Chrome
     IF    '${BROWSER}' == 'chrome'
@@ -46,6 +44,19 @@ Start Testing
     ELSE
         Open Browser    ${SUT}    browser=${BROWSER}
     END
+
+    IF    ${video}
+        Run Keywords
+        ...    SeleniumLibrary.Set Screenshot Directory    ${REPORT_DIR}
+        ...    AND
+        ...    Start Video Recording    name=${REPORT_DIR}${/}${test_name}    monitor=${monitor}
+    END
+        
+
+Stop Testing
+    [Documentation]    Stops video recording (if running) and closes browsers. Use in Test/Suite Teardown.
+    Run Keyword And Ignore Error    Stop Video Recording
+    Close All Browsers
 
 # -----------------------------------------------------------
 #         Custom Waits
@@ -73,3 +84,15 @@ Confrim Page Title
     ...    Usage: Confrim Page Title    title
     [Arguments]    ${title}
     Element Should Contain    ${page_title}    ${title}
+
+
+# -----------------------------------------------------------
+#         Element Keywords
+# -----------------------------------------------------------
+Element Should Contain Attribute
+    [Documentation]   Confirm an attribute of an element
+    ...    Usage: Element Should Contain Class    element    attribute    expected
+    [Arguments]    ${element}    ${attr}    ${expected}
+    Wait For Element Visible    ${element}
+    Element Attribute Value Should Be    ${element}    ${attr}    ${expected}
+
