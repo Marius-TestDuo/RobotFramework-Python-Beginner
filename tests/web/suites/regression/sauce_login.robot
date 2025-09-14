@@ -18,6 +18,7 @@ Standard User - Valid Login
     
     # Confirm user is logged in 
     Wait For Element Visible    ${page_title}
+    Log Out
 
 Login Error Checks
     [Documentation]    Test the standard user login with a valid login
@@ -25,9 +26,13 @@ Login Error Checks
     [Setup]    Start Testing    ${TEST NAME}    ${True}    2
     [Teardown]    Stop Testing
 
+    Wait For Element Visible    ${login_btn}
+    Input Text    ${username_txt}    ${NULL}
+    Input Password    ${password_txt}    ${NULL}
+    Click Button    ${login_btn}
 
 
-Locaked Out User
+Locked Out User
     [Documentation]    Test the locked out user login
     [Tags]    login
     [Setup]    Start Testing    ${TEST NAME}

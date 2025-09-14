@@ -71,13 +71,20 @@ Wait For Element Visible
 
 
 # -----------------------------------------------------------
-#         Login Page
+#         Authentication
 # -----------------------------------------------------------
 Valid login
     Wait For Element Visible    ${login_btn}
     Input Text    ${username_txt}     ${standard_user}
     Input Password    ${password_txt}    ${standard_password}
     Click Button    ${login_btn}
+
+
+Log Out
+    Wait For Element Visible    ${burger_menu}
+    Click Element    ${burger_menu}
+    Wait For Element Visible    ${nav_logout}
+    Click Element    ${nav_logout}
     
 Confrim Page Title
     [Documentation]   Confirm the expected title of the page
