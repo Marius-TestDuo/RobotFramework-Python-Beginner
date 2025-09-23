@@ -50,11 +50,14 @@ Start Testing
     # Maximize the browser for maximum realestate
     Maximize Browser Window
     # Set the folder for screenshots
-    SeleniumLibrary.Set Screenshot Directory    ${REPORT_DIR}
+    
     IF    ${video}
         Run Keywords
-        # Set folder for video recordings
+        ...    SeleniumLibrary.Set Screenshot Directory    ${REPORT_DIR}
+        ...    AND
         ...    Start Video Recording    name=${REPORT_DIR}${/}${test_name}    monitor=${monitor}
+    ELSE
+        SeleniumLibrary.Set Screenshot Directory    ${REPORT_DIR}
     END
     
         
@@ -88,6 +91,7 @@ Log Out
     Click Element    ${burger_menu}
     Wait For Element Visible    ${nav_logout}
     Click Element    ${nav_logout}
+    Wait For Element Visible    ${login_btn}
     
 Confrim Page Title
     [Documentation]   Confirm the expected title of the page

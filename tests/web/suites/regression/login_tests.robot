@@ -1,4 +1,4 @@
-[Documentation]    This test suite test all of the login page functions.
+[Documentation]    This test suite test all of the login page functions in a classical manner.
 
 *** Settings ***
 Library    SeleniumLibrary
@@ -86,3 +86,4 @@ Login - Locked Out User
     Element Text Should Be    ${login_error_message}    Epic sadface: Sorry, this user has been locked out.
     Element Should Contain Attribute    ${username_txt}    class    input_error form_input error
     Element Should Contain Attribute    ${password_txt}    class    input_error form_input error
+    Clear Login Error
