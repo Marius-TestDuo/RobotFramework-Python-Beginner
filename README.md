@@ -23,7 +23,7 @@ This will:
 2) Activate the environment for your shell session
 
 ```
-.\.venv\Scripts\Activate.ps1
+.\.venv\Scripts\Activate.ps1 or the activate.bat in the root folder
 ```
 
 3) Verify tools
@@ -74,7 +74,7 @@ Project structure aligns with web, API, and mobile separation. Use consistent, r
 
 - Files: descriptive, lowercase, underscores; avoid spaces.
   - Test suites (tests/<area>/suites): `login_smoke.robot`, `cart_regression.robot`
-  - Resources (keywords/locators/variables) use `.resource`: `login_page.resource`, `common_nav.resource`, `environment.resource`
+  - Resources (keywords/locators/variables) use `.resource` or `.robot`: `login_page.resource`, `common_nav.robot`, `environment.resource`
   - Variables (alt): `.robot` also acceptable for variable-only resources: `environment.robot`
   - Python libraries: `libraries/<domain>/`: `date_utils.py`, `selenium_extras.py`
 
@@ -88,8 +88,8 @@ Project structure aligns with web, API, and mobile separation. Use consistent, r
   - Locators: `${username_txt}`, `${sign_in_btn}`, `${forgot_password_lnk}`
 
 - Locators (web): prefer stable CSS with `data-test` attributes; use XPath only when needed for complex relations.
-  - Common/global locators in `tests/web/resources/locators/common/`
-  - Page-specific locators in `tests/web/resources/locators/pages/` (one file per page)
+  - Common/global locators in `tests/web/resources/locators/`
+  - Page-specific locators in `tests/web/resources/locators/` (one file per page)
   - Parameterized locators: use keywords to compose or placeholders inside keywords.
 
 - Tags: lowercase, purpose- and domain-oriented.
