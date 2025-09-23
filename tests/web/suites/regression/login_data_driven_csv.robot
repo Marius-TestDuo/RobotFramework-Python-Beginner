@@ -1,23 +1,20 @@
-[Documentation]    This test suite test all of the login page functions in a data driven manner.
+[Documentation]    This test suite test all of the login page functions with in line data.
 
 *** Settings ***
 Library    SeleniumLibrary
-
+Library    DataDriver    file=${EXECDIR}/tests/web/resources/data/login_data.csv    dialect=UserDefined    delimiter=,
 Resource    ../../resources/locators/loc_login_page.resource
 Resource    ../../resources/locators/loc_common.resource
 Resource    ../../resources/keywords/kw_common.resource
-Resource    ../../resources//keywords/kw_login_page.resource
+Resource    ../../resources/keywords/kw_login_page.resource
 Test Template    Login With
 Test Setup    Start Testing    ${TEST_NAME}    ${True}    2
 Test Teardown    Stop Testing
 Force Tags    login    regression
 
-*** Variables ***
-
-
 *** Test Cases ***
-Valid Login With Standard User    ${standard_user}    ${standard_password}    ${EMPTY}
-
+# Place holder Test Case for CSV data
+Login - Data From CSV    1    2    3
 
 *** Keywords ***
 Login With
