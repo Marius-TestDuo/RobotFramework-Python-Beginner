@@ -34,9 +34,11 @@ Dismiss Browser Bubble
 # -----------------------------------------------------------
 Start Testing
     [Documentation]    Used to start a test. Opens the Environment Browser specified "${BROWSER}" and goes to the SUT specified "${SUT}"
-    ...    Used with test Setup
-    [Arguments]    ${test_name}    ${video}=${False}    ${monitor}=1
-    Log    Starting test ${test_name}
+    ...    ${test_name} is used to name the video recordings (default = ${TEST_NAME}), 
+    ...    ${video} is can be used to record test videos (default = False), 
+    ...    ${monitor} is used to indicate which monitor to record (default = 1)
+    ...    Start Testing is commonly used with [Setup]
+    [Arguments]    ${test_name}=${TEST_NAME}    ${video}=${False}    ${monitor}=1
     # Use Chrome options to disable password/leak prompts when running Chrome
     IF    '${BROWSER}' == 'chrome'
         ${opts}=    Create Chrome Options
@@ -44,17 +46,21 @@ Start Testing
     ELSE
         Open Browser    ${SUT}    browser=${BROWSER}
     END
-
+    
+    # Maximize the browser for maximum realestate
+    Maximize Browser Window
+    # Set the folder for screenshots
+    SeleniumLibrary.Set Screenshot Directory    ${REPORT_DIR}
     IF    ${video}
         Run Keywords
-        ...    SeleniumLibrary.Set Screenshot Directory    ${REPORT_DIR}
-        ...    AND
+        # Set folder for video recordings
         ...    Start Video Recording    name=${REPORT_DIR}${/}${test_name}    monitor=${monitor}
     END
-    Maximize Browser Window
+    
         
 Stop Testing
-    [Documentation]    Stops video recording (if running) and closes browsers. Use in Test/Suite Teardown.
+    [Documentation]    Stops the video recording (if recording = True) and closes all the open browser for the test.
+    ...   Commonly used in [Teardown]
     Run Keyword And Ignore Error    Stop Video Recording
     Close All Browsers
 

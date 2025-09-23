@@ -125,3 +125,10 @@ Consistency tips
 - tag name: by tag. Example: tag:input
 - link text: full link text. Example: link:Sign in
 - partial link text: partial link. Example: partial link:Sign
+
+## Test Features
+- Video Recording: Video recording can be set per test (see start Testing for options)
+  - Videos are saved in workingfolder/reports/corrosponding module (web / mobile/ etc)
+
+## Test Videos
+- All test videos that are kept to preview how the tests run are kept in workingfolder/test_videos

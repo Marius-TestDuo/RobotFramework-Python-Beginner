@@ -1,3 +1,5 @@
+[Documentation]    This test suite test all of the login page functions.
+
 *** Settings ***
 Library    SeleniumLibrary
 
@@ -10,7 +12,7 @@ Resource    ../../resources//keywords/kw_login_page.resource
 
 
 *** Test Cases ***
-Standard User - Valid Login
+Login - Valid Login With Standard User
     [Documentation]    Test the standard user login with a valid login
     [Tags]    login    valid    regression
     [Setup]    Start Testing    ${TEST NAME}    ${True}    2
@@ -21,7 +23,7 @@ Standard User - Valid Login
     Wait For Element Visible    ${page_title}
     Log Out
 
-Login Error Checks
+Login - Login Error Checks
     [Documentation]    Test all errors on the login form
     [Tags]    login    invalid    regression
     [Setup]    Start Testing    ${TEST NAME}    ${True}    2
@@ -67,26 +69,19 @@ Login Error Checks
     Element Should Contain Attribute    ${password_txt}    class    input_error form_input error
     Element Text Should Be    ${login_error_message}     Epic sadface: Username and password do not match any user in this service
 
-
-
-
-
-
-
-
-Locked Out User
-    [Documentation]    Test the locked out user login
+Login - Locked Out User
+    [Documentation]    Test the locked out user to confirm they are not able to login
     [Tags]    login
     [Setup]    Start Testing    ${TEST NAME}
     [Teardown]    Stop Testing
 
-    # Login
+    Log    Login with locked out user
     Wait For Element Visible    ${login_btn}
     Input Text    ${username_txt}     ${locked_out_user}
     Input Password    ${password_txt}    ${standard_password}
     Click Button    ${login_btn}
     
-    # Confirm error
+    Log    Confirm the error message
     Wait For Element Visible    ${login_error_message}
     Element Text Should Be    ${login_error_message}    Epic sadface: Sorry, this user has been locked out.
     Element Should Contain Attribute    ${username_txt}    class    input_error form_input error
