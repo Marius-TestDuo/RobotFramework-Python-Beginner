@@ -51,6 +51,7 @@ Start Testing
         ...    AND
         ...    Start Video Recording    name=${REPORT_DIR}${/}${test_name}    monitor=${monitor}
     END
+    Maximize Browser Window
         
 Stop Testing
     [Documentation]    Stops video recording (if running) and closes browsers. Use in Test/Suite Teardown.

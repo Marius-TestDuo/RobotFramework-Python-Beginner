@@ -19,3 +19,6 @@ debug.log
 # Drivers cache
 drivers/
 .wdm/
+
+# Local Reports
+reports/
