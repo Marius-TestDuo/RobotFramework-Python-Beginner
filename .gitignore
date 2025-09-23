@@ -12,7 +12,7 @@ log.json
 debug.log
 
 # Editors/OS
-.vscode/
+# .vscode/
 .idea/
 .DS_Store
 
