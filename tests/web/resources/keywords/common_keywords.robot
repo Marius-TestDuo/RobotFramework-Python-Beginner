@@ -52,7 +52,6 @@ Start Testing
         ...    Start Video Recording    name=${REPORT_DIR}${/}${test_name}    monitor=${monitor}
     END
         
-
 Stop Testing
     [Documentation]    Stops video recording (if running) and closes browsers. Use in Test/Suite Teardown.
     Run Keyword And Ignore Error    Stop Video Recording
@@ -68,8 +67,6 @@ Wait For Element Visible
     [Arguments]    ${element}    ${time_out}=${LONG_WAIT}
     Wait Until Keyword Succeeds    ${time_out}     ${POLL_INTERVAL}     Element Should Be Visible     ${element}
 
-
-
 # -----------------------------------------------------------
 #         Authentication
 # -----------------------------------------------------------
@@ -78,7 +75,6 @@ Valid login
     Input Text    ${username_txt}     ${standard_user}
     Input Password    ${password_txt}    ${standard_password}
     Click Button    ${login_btn}
-
 
 Log Out
     Wait For Element Visible    ${burger_menu}

@@ -21,7 +21,7 @@ Standard User - Valid Login
     Log Out
 
 Login Error Checks
-    [Documentation]    Test the standard user login with a valid login
+    [Documentation]    Test all error on the login page
     [Tags]    login
     [Setup]    Start Testing    ${TEST NAME}    ${True}    2
     [Teardown]    Stop Testing

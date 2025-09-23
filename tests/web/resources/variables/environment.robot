@@ -2,12 +2,10 @@
 ${SUT}=    https://www.saucedemo.com
 ${BROWSER}=    chrome
 
-${LONG_WAIT}=    30
-${SHORT_WAIT}=    5
+${LONG_WAIT}=    30s
+${SHORT_WAIT}=    5s
 ${POLL_INTERVAL}=    500ms
 ${REPORT_DIR}=    ${EXECDIR}/reports/web
-
-
 
 ${standard_user}=    standard_user
 ${locked_out_user}=    locked_out_user
