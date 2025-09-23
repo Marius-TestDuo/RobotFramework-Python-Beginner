@@ -15,3 +15,4 @@ ${error_user}=    error_user
 ${visual_user}=    visual_user
 
 ${standard_password}=    secret_sauce
+
