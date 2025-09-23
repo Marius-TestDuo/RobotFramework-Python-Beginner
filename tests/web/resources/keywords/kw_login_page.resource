@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    ../locators/login_page.robot
+Resource    ../locators/loc_login_page.resource
 
 
 *** Keywords ***

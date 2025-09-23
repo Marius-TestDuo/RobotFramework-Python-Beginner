@@ -1,10 +1,10 @@
 *** Settings ***
 Library    SeleniumLibrary
 
-Resource    ../../resources/locators/login_page.robot
-Resource    ../../resources/locators/common_locators.robot
-Resource    ../../resources/keywords/common_keywords.robot
-Resource    ../../resources//keywords/login_page.robot
+Resource    ../../resources/locators/loc_login_page.resource
+Resource    ../../resources/locators/loc_common.resource
+Resource    ../../resources/keywords/kw_common.resource
+Resource    ../../resources//keywords/kw_login_page.resource
 
 *** Variables ***
 
