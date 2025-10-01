@@ -1,4 +1,4 @@
-[Documentation]    This test suite test all of the login page functions in a classical manner.
+[Documentation]    This test suite tests all of the login page functions in a classical manner.
 
 *** Settings ***
 Library    SeleniumLibrary
@@ -6,7 +6,7 @@ Library    SeleniumLibrary
 Resource    ../../resources/locators/loc_login_page.resource
 Resource    ../../resources/locators/loc_common.resource
 Resource    ../../resources/keywords/kw_common.resource
-Resource    ../../resources//keywords/kw_login_page.resource
+Resource    ../../resources/keywords/kw_login_page.resource
 
 *** Variables ***
 

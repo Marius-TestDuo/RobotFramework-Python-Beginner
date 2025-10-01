@@ -1,4 +1,4 @@
-[Documentation]    This test suite test all of the login page functions with Excel data.
+[Documentation]    This test suite tests all of the login page functions with Excel data.
 
 *** Settings ***
 Library    SeleniumLibrary

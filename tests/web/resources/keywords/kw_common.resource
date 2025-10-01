@@ -93,9 +93,9 @@ Log Out
     Click Element    ${nav_logout}
     Wait For Element Visible    ${login_btn}
     
-Confrim Page Title
+Confirm Page Title
     [Documentation]   Confirm the expected title of the page
-    ...    Usage: Confrim Page Title    title
+    ...    Usage: Confirm Page Title    title
     [Arguments]    ${title}
     Element Should Contain    ${page_title}    ${title}
 

@@ -128,7 +128,7 @@ Consistency tips
 
 ## Test Features
 - Video Recording: Video recording can be set per test (see start Testing for options)
-  - Videos are saved in workingfolder/reports/corrosponding module (web / mobile/ etc)
+  - Videos are saved in workingfolder/reports/corresponding module (web / mobile/ etc)
 
 ## Test Videos
 - All test videos that are kept to preview how the tests run are kept in workingfolder/test_videos
