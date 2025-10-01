@@ -1,0 +1,6 @@
+*** Test Cases ***,${username},${password},${expected_error},[Tags]
+Login - Valid Login With Standard User,standard_user,secret_sauce,,smoke
+Login - Blank username and password,,,"Epic sadface: Username is required",negative
+Login - Valid user Blank password,standard_user,,"Epic sadface: Password is required",regression
+Login - Incorrect username correct password,NotCorrect,secret_sauce,"Epic sadface: Username and password do not match any user in this service",regression
+Login - Correct username incorrect password,standard_user,NotCorrect,"Epic sadface: Username and password do not match any user in this service",regression
