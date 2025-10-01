@@ -87,6 +87,3 @@ Login - Locked Out User
     Element Should Contain Attribute    ${username_txt}    class    input_error form_input error
     Element Should Contain Attribute    ${password_txt}    class    input_error form_input error
     Clear Login Error
-
-
-    just a test

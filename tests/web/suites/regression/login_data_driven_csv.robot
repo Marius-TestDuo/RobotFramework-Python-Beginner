@@ -1,4 +1,4 @@
-[Documentation]    This test suite test all of the login page functions with in line data.
+[Documentation]    This test suite test all of the login page functions with CSV data.
 
 *** Settings ***
 Library    SeleniumLibrary

@@ -1,9 +1,9 @@
-[Documentation]    This test suite test all of the login page functions with in line data.
+[Documentation]    This test suite test all of the login page functions with Excel data.
 
 *** Settings ***
 Library    SeleniumLibrary
 # TODO: Change csv to test to excel
-Library    DataDriver    file=${EXECDIR}/tests/web/resources/data/login_data.csv    dialect=UserDefined    delimiter=,
+Library    DataDriver    file=${EXECDIR}/tests/web/resources/data/login_data.xlsx    sheet_name=DataDriven
 Resource    ../../resources/locators/loc_login_page.resource
 Resource    ../../resources/locators/loc_common.resource
 Resource    ../../resources/keywords/kw_common.resource
@@ -14,8 +14,8 @@ Test Teardown    Stop Testing
 Force Tags    login    regression
 
 *** Test Cases ***
-# Place holder Test Case for CSV data
-Login - Data From CSV    1    2    3
+# Place holder Test Case for Excel data
+Login - Data From Excel    1    2    3    # Placeholder required by the DataDriver
 
 *** Keywords ***
 Login With
