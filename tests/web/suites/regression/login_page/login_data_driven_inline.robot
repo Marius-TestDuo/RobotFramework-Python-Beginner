@@ -3,10 +3,8 @@
 *** Settings ***
 Library    SeleniumLibrary
 
-Resource    ../../resources/locators/loc_login_page.resource
-Resource    ../../resources/locators/loc_common.resource
-Resource    ../../resources/keywords/kw_common.resource
-Resource    ../../resources/keywords/kw_login_page.resource
+Resource    ../../../resources/kw_common.resource
+Resource    ../../../resources/kw_login_page.resource
 Test Template    Login With
 Test Setup    Start Testing    ${TEST_NAME}    ${True}    2
 Test Teardown    Stop Testing

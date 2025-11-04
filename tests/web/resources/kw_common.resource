@@ -5,9 +5,9 @@
 *** Settings ***
 Library    SeleniumLibrary
 Library    ScreenCapLibrary
-Resource    ../locators/loc_common.resource
-Resource    ../locators/loc_login_page.resource
-Resource    ../../resources/variables/environment.resource
+Resource    page_objects/loc_common.resource
+Resource    page_objects/loc_login_page.resource
+Resource    variables/environment.resource
 
 *** Keywords ***
 # -----------------------------------------------------------
