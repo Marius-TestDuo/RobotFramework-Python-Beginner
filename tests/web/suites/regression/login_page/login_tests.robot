@@ -2,11 +2,8 @@
 
 *** Settings ***
 Library    SeleniumLibrary
-
-Resource    ../../resources/locators/loc_login_page.resource
-Resource    ../../resources/locators/loc_common.resource
-Resource    ../../resources/keywords/kw_common.resource
-Resource    ../../resources/keywords/kw_login_page.resource
+Resource    ../../../resources/kw_common.resource
+Resource    ../../../resources/kw_login_page.resource
 
 *** Variables ***
 

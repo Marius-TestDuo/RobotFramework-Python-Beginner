@@ -1,6 +1,6 @@
 *** Settings ***
 Library    SeleniumLibrary
-Resource    ../locators/loc_login_page.resource
+Resource    page_objects/loc_login_page.resource
 
 
 *** Keywords ***

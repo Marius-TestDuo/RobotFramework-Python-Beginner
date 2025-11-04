@@ -5,6 +5,9 @@ ${BROWSER}=    chrome
 ${LONG_WAIT}=    30s
 ${SHORT_WAIT}=    5s
 ${POLL_INTERVAL}=    500ms
+${WEB_RESOURCES}=    ${EXECDIR}/tests/web/resources/
+${API_RESOURCES}=    ${EXECDIR}/tests/api/resources/
+${MOBILE_RESOURCES}=    ${EXECDIR}/tests/mobile/resources/
 ${RESULT_DIR}=    ${OUTPUT DIR}
 
 ${standard_user}=    standard_user
