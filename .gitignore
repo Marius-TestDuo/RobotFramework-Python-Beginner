@@ -21,4 +21,4 @@ drivers/
 .wdm/
 
 # Local Reports
-reports/
+results/
